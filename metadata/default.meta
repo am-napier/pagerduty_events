@@ -1,0 +1,26 @@
+#
+# ./default.meta
+#
+[]
+access = read: [ * ], write: [ itoa_admin, itoa_team_admin ], delete: [ itoa_admin, itoa_team_admin ]
+export = system
+
+#
+# Search help
+#
+[searchbnf/pagerduty_events]
+access = read: [ * ]
+export = system
+
+#
+# Custom Alert
+#
+
+# Alert Actions
+[alert_actions/pagerduty_events]
+access = read : [ itoa_admin, itoa_team_admin, itoa_analyst ], write : [ itoa_admin, itoa_team_admin ], delete: [ itoa_admin, itoa_team_admin ]
+export = system
+
+[alerts]
+export = system
+#

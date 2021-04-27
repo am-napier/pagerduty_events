@@ -1,0 +1,153 @@
+<form class="form-horizontal form-complex">
+
+    <div class="control-group">
+        <label class="control-label" for="routing_key">routing key
+            <span class="required">*</span>
+        </label>
+        <div class="controls">
+            <input type="text"
+                   name="action.pagerduty_events.param.pd_routing_key" id="routing_key" value="" />
+             <span class="help-block">
+                 Service or System integration key - <span class="default-field">pd_routing_key</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="pd_source">source (origin)
+            <span class="required">*</span>
+        </label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_source" id="pd_source" value="" />
+             <span class="help-block">
+                 Event source, ie a host or service - <span class="default-field">pd_source</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="summary">summary
+            <span class="required">*</span>
+        </label>
+
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_summary" id="summary" value="" />
+             <span class="help-block">
+                 Problem description - <span class="default-field">pd_summary</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="severity">severity
+            <span class="required">*</span>
+        </label>
+
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_severity" id="severity" value="" />
+             <span class="help-block">
+                 One of critical, error, warning or info - <span class="default-field">pd_severity</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="timestamp">epoch timestamp</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_timestamp" id="timestamp" value="" />
+            <span class="help-block">
+                Epoch timestamp will be reformated to iso-8601 - <span class="default-field">pd_timestamp</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="dedup_key">dedup_key</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_dedup_key" id="dedup_key" value="" />
+            <span class="help-block">
+                Triggers de-duplication - <span class="default-field">pd_dedup_key</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="link_text">link text</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_link_text" id="link_text" value="" />
+             <span class="help-block">
+                 List of link names - <span class="default-field">pd_link_text</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="link_href">link href</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_link_href" id="link_href" value="" />
+             <span class="help-block">
+                 List of links - <span class="default-field">pd_link_href</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="class">class</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_class" id="class" value="" />
+             <span class="help-block">
+                The class/type of the event - <span class="default-field">pd_class</span>
+            </span>
+        </div>
+    </div>
+
+
+    <div class="control-group">
+        <label class="control-label" for="component">component</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_component" id="component" value="" />
+             <span class="help-block">
+                Component of the source - <span class="default-field">pd_component</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="group">group</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_group" id="group" value="" />
+             <span class="help-block">
+                Alert grouping - <span class="default-field">pd_group</span>
+            </span>
+        </div>
+    </div>
+
+    <div class="control-group">
+        <label class="control-label" for="url">Integration URL</label>
+        <div class="controls">
+            <input type="text" name="action.pagerduty_events.param.pd_url" id="url" value="" />
+            <span class="help-block">
+                Overrides the URL - <span class="default-field">pd_url</span>
+            </span>
+        </div>
+    </div>
+    About Values<br/>
+    <ul>
+        <li>We first attempt to find a token in each field eg '%my_source%' and use this to derive the value</li>
+        <li>Next we use the literal value in the field if one is supplied, eg 'my source'</li>
+        <li>If no value is provided in a field we use the <span class="default-field">default_field</span>
+            key to extract one from the search results
+        </li>
+    </ul>
+    <a href="https://developer.pagerduty.com/docs/events-api-v2/trigger-events/">PagerDuty API Fields Reference</a>
+
+</form>
+
+<style>
+.default-field {
+    border: 1px solid silver;
+    padding: 2px;
+    background-color : #f2f4f5;
+}
+
+</style>

@@ -1,0 +1,12 @@
+<dashboard isDashboard="false"
+           script="setup.js"
+           stylesheet="setup.css">
+    <label>PagerDuty Events: Setup</label>
+    <row>
+        <panel>
+            <html>
+                <div id="main_container"></div>
+            </html>
+        </panel>
+    </row>
+</dashboard>
